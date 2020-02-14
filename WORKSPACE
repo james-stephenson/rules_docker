@@ -365,9 +365,10 @@ yarn_install(
     yarn_lock = "//testdata:yarn.lock",
 )
 
-load("@npm//:install_bazel_dependencies.bzl", "install_bazel_dependencies")
+# The "npm" repository is not portable; it only supports x86_64 architectures
+#load("@npm//:install_bazel_dependencies.bzl", "install_bazel_dependencies")
 
-install_bazel_dependencies()
+#install_bazel_dependencies()
 
 load(
     "//nodejs:image.bzl",
